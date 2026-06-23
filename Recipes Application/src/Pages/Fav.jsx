@@ -4,11 +4,11 @@ import { useContext } from "react";
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom'
 
-const Recipes = () => {
-  const [recipes, setRecipes] = useContext(RecipesContext)
+const Fav = () => {
+ const favourite = JSON.parse(localStorage.getItem("fav")) || [];
   
  
-const MapRecipes = recipes.map((e)=> {
+const MapRecipes = favourite.map((e)=> {
     
     return (
       <div className='w-60 h-40 bg-blue-600 rounded p-6 font-medium' key={e.id}>
@@ -29,4 +29,4 @@ const MapRecipes = recipes.map((e)=> {
   )
 }
 
-export default Recipes
+export default Fav
